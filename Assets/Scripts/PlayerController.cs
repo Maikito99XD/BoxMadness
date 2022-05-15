@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
-    bool canJump;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -26,19 +23,11 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f * Time.deltaTime, 0));
         }
 
-        if (Input.GetKeyDown("up") && canJump)
+        if (Input.GetKeyDown("up"))
         {
-            canJump = false;
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 100));
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f * Time.deltaTime, 0));
         }
 
        
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.transform.tag == "ground")
-        {
-            canJump = true;
-        }
     }
 }
