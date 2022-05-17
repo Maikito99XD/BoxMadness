@@ -25,9 +25,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("up"))
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f * Time.deltaTime, 0));
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1000f * Time.deltaTime));
         }
 
-       
+        if (Input.GetKeyDown("down"))
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -1000f * Time.deltaTime));
+        }
+
     }
 }
