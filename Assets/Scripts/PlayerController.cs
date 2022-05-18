@@ -13,22 +13,22 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey("left"))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000f * Time.deltaTime,0));
         }
 
-        if (Input.GetKey("right"))
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f * Time.deltaTime, 0));
         }
 
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1000f * Time.deltaTime));
         }
 
-        if (Input.GetKeyDown("down"))
+        if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -1000f * Time.deltaTime));
         }
