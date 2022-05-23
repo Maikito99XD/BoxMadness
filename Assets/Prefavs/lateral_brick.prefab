@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5384023610497950175}
   - component: {fileID: 5384023610497950174}
   - component: {fileID: -8033319089719576778}
+  - component: {fileID: 3563845485630948840}
   m_Layer: 0
   m_Name: lateral_brick
   m_TagString: Untagged
@@ -109,3 +110,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.65, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &3563845485630948840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5384023610497950169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6516f66ad22f3c4fbff3fc65073b6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

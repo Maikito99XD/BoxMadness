@@ -4,34 +4,33 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    Rigidbody2D rb2d;
+    private float moveSpeed = 10;
+
     // Start is called before the first frame update
     void Start()
     {
-       
+        rb2d = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(-1000f * Time.deltaTime,0));
-        }
-
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(1000f * Time.deltaTime, 0));
+            transform.Translate(Vector2.right * (Time.deltaTime * moveSpeed));
         }
-
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, 1000f * Time.deltaTime));
+            transform.Translate(Vector2.left * (Time.deltaTime * moveSpeed));
         }
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.UpArrow))
         {
-            gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, -1000f * Time.deltaTime));
+            transform.Translate(Vector2.up * (Time.deltaTime * moveSpeed));
         }
-
+        else if(Input.GetKey(KeyCode.DownArrow))
+        {
+            transform.Translate(Vector2.down * (Time.deltaTime * moveSpeed));
+        }
     }
 }
