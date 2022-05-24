@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 741436529886338517}
   - component: {fileID: 509139750816543178}
   - component: {fileID: 4619844528272118746}
+  - component: {fileID: 6503037532196613400}
+  - component: {fileID: -2312296241782928107}
   m_Layer: 0
   m_Name: big_enemy
   m_TagString: Enemy
@@ -124,3 +126,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   "tiempoEntreDa\xF1o": 0
   "da\xF1oQueRecibeJugador": 0
+--- !u!320 &6503037532196613400
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741436529886338518}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings: []
+  m_ExposedReferences:
+    m_References: []
+--- !u!95 &-2312296241782928107
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 741436529886338518}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
