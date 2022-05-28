@@ -15,10 +15,15 @@ public class CombateJugador : MonoBehaviour
     public Text TXTscore;
     public Text TXTllavesJugador;
 
+    public GameObject reset;
+    public Image gameOver;
+
     //Al arrancar se le asignará la vida máxima que tendrá el jugador
     void Start()
     {
         vida = maxVida;
+        gameOver.enabled = false;
+        reset.gameObject.SetActive(false);
     }
 
     //El metodo TomarDaño se le pasará el daño que recibe nuestro jugador en cuanto a cierco enemigo,
@@ -31,6 +36,9 @@ public class CombateJugador : MonoBehaviour
         if (vida <= 0)
         {
             Destroy(gameObject);
+            reset.gameObject.SetActive(true);
+            Debug.Log("He llegado");
+            gameOver.enabled = true;
         }
     }
     public void consigueLlavesScore(int puntuacion, int llaves)
