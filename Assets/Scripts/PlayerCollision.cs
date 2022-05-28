@@ -1,13 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCollision : MonoBehaviour
 {
-    protected int keys = 0;
-    protected int points = 0;
+    public CombateJugador cj;
+    public int vidaJugador = 0;
+    public int scoreJugador = 0;
+    public int llavesJugador = 0;
+    public Text TXTscore;
+    public Text TXTvidaJugador;
+    public Text TXTllavesJugador;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+private void OnTriggerEnter2D(Collider2D collision)
     {
         ProcessCollision(collision.gameObject);
     }
@@ -22,12 +28,20 @@ public class PlayerCollision : MonoBehaviour
         if (collider.CompareTag("Box"))
         {
             GivePointsAndKeysToPlayer();
+            Destroy(collider.gameObject);
         }
     }
 
     void GivePointsAndKeysToPlayer()
     {
-        keys += 1;
-        points += 1000;
+        llavesJugador++;
+        scoreJugador += 1000;
+    }
+
+    private void Update()
+    {
+        TXTscore.text = "Score: " + scoreJugador;
+        TXTllavesJugador.text = llavesJugador.ToString();
+        TXTvidaJugador.text = vidaJugador.ToString();
     }
 }
