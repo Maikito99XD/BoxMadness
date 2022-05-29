@@ -7,7 +7,7 @@ public class ReiniciarJuego : MonoBehaviour
 {
     public void ReiniciarElJuego()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
 
     }
 }
