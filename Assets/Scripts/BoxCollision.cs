@@ -12,7 +12,7 @@ public class BoxCollision : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<CombateJugador>().consigueLlavesScore(cantidadPuntos, cantidadLlaves);
+            collision.GetComponent<CombateJugador>().ConsigueLlavesScore(cantidadPuntos, cantidadLlaves);
             Destroy(gameObject);
         }
     }

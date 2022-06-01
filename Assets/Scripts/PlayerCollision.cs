@@ -5,13 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public CombateJugador cj;
-    public int vidaJugador = 0;
-    public int scoreJugador = 0;
-    public int llavesJugador = 0;
-    public Text TXTscore;
-    public Text TXTvidaJugador;
-    public Text TXTllavesJugador;
 
 private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -27,21 +20,16 @@ private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collider.CompareTag("Box"))
         {
-            GivePointsAndKeysToPlayer();
             Destroy(collider.gameObject);
+        }
+        if (collider.CompareTag("Puerta"))
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                collider.gameObject.GetComponent<Animator>();
+                collider.GetComponent<CombateJugador>().AbrePuerta();
+            }
         }
     }
 
-    void GivePointsAndKeysToPlayer()
-    {
-        llavesJugador++;
-        scoreJugador += 1000;
-    }
-
-    private void Update()
-    {
-        TXTscore.text = "Score: " + scoreJugador;
-        TXTllavesJugador.text = llavesJugador.ToString();
-        TXTvidaJugador.text = vidaJugador.ToString();
-    }
 }
