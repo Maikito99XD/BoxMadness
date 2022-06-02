@@ -5,14 +5,19 @@ ScriptsOnlyBuild:
     - CombateJugador
     - EnemyCollision
     - MainMenu
+    - PlayerCollision
     - PlayerController
+    - PuertaController
     - ReiniciarJuego
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
+    - UnityEditor.Tilemaps.GridPaletteBrushes
+    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -69,6 +74,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 95
       Script: {instanceID: 0}
     - Class: 104
@@ -109,6 +118,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 5070}
     - Class: 114
       Script: {instanceID: 5634}
+    - Class: 114
+      Script: {instanceID: 5650}
+    - Class: 114
+      Script: {instanceID: 18148}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -145,6 +158,10 @@ ScriptsOnlyBuild:
     - Class: 49
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
@@ -795,7 +812,7 @@ ScriptsOnlyBuild:
     className: SpriteSkinEntity
   - hash:
       serializedVersion: 2
-      Hash: d90a102861905576b5ca0b4acd9ddbc3
+      Hash: 6074732e0d1c94c094e038adac2db6f2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CombateJugador
@@ -897,7 +914,7 @@ ScriptsOnlyBuild:
     className: PlayerController
   - hash:
       serializedVersion: 2
-      Hash: b3481ece7df52ec6c6316b3000f26895
+      Hash: c5ae837d2e61b5265ea0a9b1e1883a63
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerCollision
@@ -949,8 +966,14 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_TextEventCheck
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PuertaController
   platform: 19
   scenePathNames:
   - Assets/Scenes/Menu.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/mstee/Desktop/BoxMadnessBuild/BoxMadness.exe
+  playerPath: C:/Users/mstee/Desktop/BoxMadnessBuild/Test1/BoxMadness.exe

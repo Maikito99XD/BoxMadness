@@ -12,7 +12,7 @@ public class CombateJugador : MonoBehaviour
     [SerializeField] private AudioSource openBoxSoundEffect;
     [SerializeField] private AudioSource openDoorSoundEffect;
     private int vidaActualJugador;
-    private int llavesJugador = 0;
+    public int llavesJugador = 0;
     private int scoreJugador = 0;
     public Text TXTvidaJugador;
     public Text TXTscore;
@@ -21,6 +21,7 @@ public class CombateJugador : MonoBehaviour
     public GameObject reset;
     public GameObject quit;
     public Image gameOver;
+
 
     //Al arrancar se le asignará la vida máxima que tendrá el jugador
     void Start()
@@ -35,22 +36,29 @@ public class CombateJugador : MonoBehaviour
     //ya que gracias a esto podemos controlar cuando ha perdido el jugador
     public void TomarDaño(int daño)
     {
-        //Se le resta el daño que recibe a la vida actual del jugador
-        vida -= daño;
-        golpeSoundEffect.Play();
+        if (vida > 0)
+        {
+            //Se le resta el daño que recibe a la vida actual del jugador
+            vida -= daño;
+            golpeSoundEffect.Play();
+        }
         //Si la vida del jugador es igual o menor a 0 significa que el jugador ha perdido y es un GameOver
         if (vida <= 0)
         {
+            vida = 0;
             gameOver.enabled = true;
             reset.gameObject.SetActive(true);
             quit.gameObject.SetActive(true);
         }
     }
+    public int DevuelveLlaves()
+    {
+        return llavesJugador;
+    }
     public void AbrePuerta()
     {
         llavesJugador -= 1;
         openDoorSoundEffect.Play();
-
     }
     public void ConsigueLlavesScore(int puntuacion, int llaves)
     {

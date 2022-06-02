@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(Vector2.up * (Time.deltaTime * moveSpeed));
         }
-        else if(Input.GetKey(KeyCode.DownArrow))
+        else if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.Translate(Vector2.down * (Time.deltaTime * moveSpeed));
         }

@@ -5,31 +5,56 @@ using UnityEngine.UI;
 
 public class PlayerCollision : MonoBehaviour
 {
-
-private void OnTriggerEnter2D(Collider2D collision)
+    public bool puertaEntrada = false;
+    private PuertaController puerta;
+    [SerializeField] CombateJugador combateJugador;
+    private int llaves;
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        ProcessCollision(collision.gameObject);
-    }
+        if (collision.CompareTag("Box"))
+        {
+            
+        }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        ProcessCollision(collision.gameObject);
+        if (collision.CompareTag("Puerta"))
+        {
+            puertaEntrada = true;
+            puerta = collision.GetComponent<PuertaController>();
+        }
     }
-
     void ProcessCollision(GameObject collider)
     {
         if (collider.CompareTag("Box"))
         {
-            Destroy(collider.gameObject);
+            
         }
+        
         if (collider.CompareTag("Puerta"))
         {
-            if (Input.GetKey(KeyCode.E))
+            puertaEntrada = true;
+        }
+        
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Puerta"))
+        {
+            puertaEntrada = false;
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (puertaEntrada == true)
             {
-                collider.gameObject.GetComponent<Animator>();
-                collider.GetComponent<CombateJugador>().AbrePuerta();
+                llaves = combateJugador.DevuelveLlaves();
+                if (llaves > 0)
+                {
+                    combateJugador.AbrePuerta();
+                    puerta.AnimacionPuerta();
+                }
             }
         }
     }
-
 }
